@@ -1,3 +1,7 @@
+
+/**
+ * 导出模块的方法  by:ogoodo.com
+ */
 export syncHistoryWithStore from './sync'
 export { LOCATION_CHANGE, routerReducer } from './reducer'
 
