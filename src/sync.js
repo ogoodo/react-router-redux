@@ -39,7 +39,7 @@ export default function syncHistoryWithStore(history, store, {
       'your reducers.'
     )
   }
-
+ 
   let initialLocation
   let currentLocation
   let isTimeTraveling
