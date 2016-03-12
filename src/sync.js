@@ -1,7 +1,7 @@
 import { LOCATION_CHANGE } from './reducer'
 
 const defaultSelectLocationState = state => state.routing
-
+// 这文件还要看看 by:ogoodo.com
 /**
  * This function synchronizes your history state with the Redux store.
  * Location changes flow from history to the store. An enhanced history is
@@ -22,6 +22,7 @@ const defaultSelectLocationState = state => state.routing
   * history提供到router时, location数据将这样流动:
   * history.push -> store.dispatch -> enhancedHistory.listen -> router
   * 这确保, replay或者其它event引起store state改变时, 路由将被刷新并且能转换到正确的router state
+  * by:ogoodo.com
   */
 export default function syncHistoryWithStore(history, store, {
   selectLocationState = defaultSelectLocationState,
@@ -53,7 +54,9 @@ export default function syncHistoryWithStore(history, store, {
   }
 
   // If the store is replayed, update the URL in the browser to match.
+  // store重播, 更新浏览器到匹配的url
   if (adjustUrlOnReplay) {
+    //订阅store改变
     const handleStoreChange = () => {
       const locationInStore = getLocationInStore(true)
       if (currentLocation === locationInStore) {
@@ -61,6 +64,7 @@ export default function syncHistoryWithStore(history, store, {
       }
 
       // Update address bar to reflect store state
+      // 更新地址栏以反映store state
       isTimeTraveling = true
       currentLocation = locationInStore
       history.transitionTo({
@@ -75,6 +79,7 @@ export default function syncHistoryWithStore(history, store, {
   }
 
   // Whenever location changes, dispatch an action to get it in the store
+  // 当location改变,  调用store.dispatch发送个action出去
   const handleLocationChange = (location) => {
     // ... unless we just caused that location change
     if (isTimeTraveling) {
