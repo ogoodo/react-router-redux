@@ -14,6 +14,11 @@ const defaultSelectLocationState = state => state.routing
  * event, the router will be updated appropriately and can transition to the
  * correct router state.
  */
+ /**
+  * 这个函数同步你的history state到Redux store
+  * location改变会从history同步到store, 
+  * 一个增强的history会被返回， 包括一个listen方法能回调侦听到loaction更新store
+  */
 export default function syncHistoryWithStore(history, store, {
   selectLocationState = defaultSelectLocationState,
   adjustUrlOnReplay = true
