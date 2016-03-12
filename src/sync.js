@@ -102,12 +102,13 @@ export default function syncHistoryWithStore(history, store, {
 
     // Tell the store to update by dispatching an action
     // 触发action， 通知更新store
-    // 这个是连接store 和 router的桥梁  by:ogoodo.com
+    // 这个是连接store 和 router的桥梁  by:ogoodo.com         重点       重点       重点
     store.dispatch({
       type: LOCATION_CHANGE,
       payload: location
     })
   }
+  // 这里以后要了解下history.listen  怎么来的           看          看          看
   unsubscribeFromHistory = history.listen(handleLocationChange)
 
   // The enhanced history uses store as source of truth
