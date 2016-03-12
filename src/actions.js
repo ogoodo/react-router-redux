@@ -23,4 +23,7 @@ export const go = updateLocation('go')
 export const goBack = updateLocation('goBack')
 export const goForward = updateLocation('goForward')
 
+/**
+ * 导出几个操作路由的action  by:ogoodo.com
+ */
 export const routerActions = { push, replace, go, goBack, goForward }
