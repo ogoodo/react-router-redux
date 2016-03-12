@@ -101,6 +101,8 @@ export default function syncHistoryWithStore(history, store, {
     }
 
     // Tell the store to update by dispatching an action
+    // 触发action， 通知更新store
+    // 这个是连接store 和 router的桥梁  by:ogoodo.com
     store.dispatch({
       type: LOCATION_CHANGE,
       payload: location
