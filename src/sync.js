@@ -50,6 +50,7 @@ export default function syncHistoryWithStore(history, store, {
   let unsubscribeFromHistory
 
   // What does the store say about current location?
+  // 默认是返回 store.getState().routing.locationBeforeTransitions
   const getLocationInStore = (useInitialIfEmpty) => {
     const locationState = selectLocationState(store.getState())
     return locationState.locationBeforeTransitions ||
