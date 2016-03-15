@@ -24,6 +24,9 @@ const defaultSelectLocationState = state => state.routing
   * 这确保, replay或者其它event引起store state改变时, 路由将被刷新并且能转换到正确的router state
   * by:ogoodo.com
   */
+  /**
+   * 作用:  替换(hook)history的几个方法(listen, unsubscribe这两个), 就可以插入自己的逻辑了  by:ogoodo.com
+   */
 export default function syncHistoryWithStore(history, store, {
   selectLocationState = defaultSelectLocationState,
   adjustUrlOnReplay = true
