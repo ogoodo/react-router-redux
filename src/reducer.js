@@ -16,6 +16,7 @@ const initialState = {
  */
  /**
   * 简单的合并了action传过来的数据返回 by:ogoodo.com
+  * @param payload[Object] 其实是个location对象
   */
 export function routerReducer(state = initialState, { type, payload }) {
   if (type === LOCATION_CHANGE) {
