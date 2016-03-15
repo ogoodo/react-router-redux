@@ -129,6 +129,7 @@ export default function syncHistoryWithStore(history, store, {
         }
         lastPublishedLocation = currentLocation
         if (!unsubscribed) {
+          // 这里回掉react-router     重点     重点     重点
           listener(lastPublishedLocation)
         }
       })
