@@ -25,5 +25,6 @@ export const goForward = updateLocation('goForward')
 
 /**
  * 导出几个操作路由的action  by:ogoodo.com
+ * 通过提供的中间件, 绑定到 history[method](...args) 这样子调用
  */
 export const routerActions = { push, replace, go, goBack, goForward }
